@@ -1,6 +1,7 @@
 import * as JsonValidator from 'ajv'
 
-const JSON_VALIDATOR = new JsonValidator()
+import Ajv from "ajv";
+const JSON_VALIDATOR = new Ajv()
 
 export function objectMatchesSchema(schema: object, data: any): boolean {
     return JSON_VALIDATOR.validate(schema, data) as boolean
